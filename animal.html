@@ -15,22 +15,16 @@
 
     <button type="button" onclick="checkAnimal()"> Check the guess</button>
 </form>
-
-
 <div id="result">Correct: 0 | Wrong:0</div>
-
 <script> 
 var wrong = 0;
 var correct =0;
 function checkAnimal (){
     
      var hiddenAnimalInput = document.getElementById("hidden-animal");
-     var guessAnimalInput = document.getElementById("guess_animal").value;
-     
-    
+     var guessAnimalInput = document.getElementById("guess_animal").value; 
     if(hiddenAnimalInput === guessAnimalInput){
         correct++;
-        
         alert("Ruff ruff");
     } else {
         wrong++;

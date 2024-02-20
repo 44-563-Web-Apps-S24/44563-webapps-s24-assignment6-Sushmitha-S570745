@@ -9,21 +9,24 @@
 
 <form>
     <label for="hidden_animal">The hidden animal type </label>
-    <input type ="password" id="hidden_animal" value="Chicken"> <br>
+    <input type ="password" id="hidden_animal" value="Chicken"> <br><br>
     <label for="guess_animal">Guess the animal </label>
-    <input type ="text" id="guess_animal"> <br>
+    <input type ="text" id="guess_animal"> <br><br>
 
     <button type="button" onclick="checkAnimal()"> Check the guess</button>
+    <br>
 </form>
+
 <div id="result">Correct: 0 | Wrong:0</div>
+<br>
 <script> 
 var wrong = 0;
 var correct =0;
 function checkAnimal (){
     
-     var hiddenAnimalInput = document.getElementById("hidden-animal");
-     var guessAnimalInput = document.getElementById("guess_animal").value; 
-    if(hiddenAnimalInput === guessAnimalInput){
+     const hiddenAnimalInput = document.getElementById("hidden_animal");
+     const guessAnimalInput = document.getElementById("guess_animal"); 
+    if(hiddenAnimalInput.value === guessAnimalInput.value){
         correct++;
         alert("Ruff ruff");
     } else {
@@ -32,9 +35,32 @@ function checkAnimal (){
         alert("Grrrr");
     }
     var resultElement = document.getElementById('result');
-    //resultElement.innerHTML=`<p>Correct:${correct},Wrong:${wrong}</p>`;
-    resultElement.innerHTML="Correct: " + correct + ", Incorrect: " + wrong;
+    resultElement.innerHTML=`<p>Correct:${correct},Wrong:${wrong}</p>`;
+    //resultElement.innerHTML="Correct: " + correct + ", Incorrect: " + wrong;
 }
+</script>
+<div>
+    <img id="image1"  src="sujajuice.jpg" height="150"  width="150"  alt="sujajuice" onclick="selectImage()">
+</div>
+<script>
+    let useImage = 1;
+    function selectImage(){
+        switch(useImage){
+            case 1:
+                document.getElementById("image1").src="sunnyd.jpg";
+                useImage=2;
+                break;
+            case 2:
+                document.getElementById("image1").src="Uglijuice.jpg";
+                useImage=3;
+                break;
+            case 3:
+                document.getElementById("image1").src="sujajuice.jpg";
+                useImage=1;
+                break;
+            
+        }
+    }
 </script>
 
 </body>

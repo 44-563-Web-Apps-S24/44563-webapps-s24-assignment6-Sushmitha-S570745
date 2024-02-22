@@ -26,9 +26,9 @@
 <script> 
 
 function discount(){
-    var price= parseFloat(document.getElementById("price").value);
-    var number=parseInt(document.getElementById("count").value);
-    var discount= parseInt(document.getElementById("reductions").value);
+    let price= parseFloat(document.getElementById("price").value);
+    let number=parseInt(document.getElementById("count").value);
+    let discount= parseInt(document.getElementById("reductions").value);
     var myOutput="";
     for (var i=discount;i<=discount+4;i++){
 
@@ -37,9 +37,42 @@ function discount(){
         
         }
         document.getElementById("result").innerHTML = "Totals are: " + myOutput;
-
     }
-
+</script> 
+<form>
+    <input type="radio" name="operation"  id="sum" value="sum" onclick="chooseOp ()" >
+    <label for="sum">sum</label></br>
+    <input type="radio"  name="operation"   id="mul" value="multiply" onclick="chooseOp ()">
+    <label for="mul">mult</label></br>
+    <input type="radio"   name="operation" id="expo" value="exponent" onclick="chooseOp ()">
+    <label for="expo">exp</label></br>
+</form>
+<p id="myresult"></p>
+<script>
+    function chooseOp(){
+        var inputprice = parseFloat(document.getElementById("price").value);
+        var inputdiscount = parseInt(document.getElementById("reductions").value);
+        var operation = document.querySelector('input[name="operation"]:checked').value;
+        var result1;
+        switch (operation)
+        {
+            case 'sum':
+                result1 = inputprice + inputdiscount;
+                document.getElementById('myresult').innerHTML = "Sum of "+ inputprice+ " and " + inputdiscount + " is : " + result1;
+                break;
+            case 'multiply':
+                result1 = inputprice * inputdiscount;
+                document.getElementById('myresult').innerHTML = "Product of "+ inputprice+ " and " + inputdiscount + " is : " + result1;
+                break;
+            case 'exponent':
+                result1 = Math.pow(inputprice, inputdiscount);
+                document.getElementById('myresult').innerHTML = "Exponent of "+ inputprice+ " and " + inputdiscount + " is : " + result1;
+                break;
+            default:
+                break;
+        }
+    
+    }
 </script>
 
 </body>

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
  <title>Packing page</title>
  </head>
-<body>
+<body style="background-color:aquamarine;  padding: 20px;">
 
-<h1>Sushmitha Vadhireddy packs for a trip</h1>
-
+ <h1 class="text-success">Sushmitha Vadhireddy packs for a trip</h1>
 <form>
     <label for="first">Pack light</label>
     <input type ="checkbox" id="first"  value="True"> <br>
-
     <label for="second">Carry on</label>
     <input type="checkbox" id="second" value="True"><br>
     <label for="third">Tablet</label>
     <input type="checkbox" id="third" value="False"><br>
-
-    <button type="button" onclick="selectPack()">Select for packing</button>
+    <button type="button" onclick="selectPack()" class="btn btn-info">Select for packing</button>
 </form>
-
-
 <p id="result"></p>
 <script> 
 var my_pack = {};
@@ -32,7 +36,6 @@ function selectPack(){
     my_pack.mycheckbox2=checkbox2;
     my_pack.mycheckbox3=checkbox3;
     document.getElementById("result").innerHTML= "Result : " + JSON.stringify(my_pack);
-
 }
 </script>
 <form>
@@ -40,12 +43,11 @@ function selectPack(){
     <input type="text" id = "month" value="May"><br>
     <label>Enter price</label>
     <input type="text" id="tripprice" value="3"> <br>
-    <button type="button" onclick="updatePack()"> Update the pack </button>
+    <button type="button" onclick="updatePack()" class="btn btn-warning"> Update the pack </button>
 </form>
 <p id="result for packing"></p>
-
 <script>
-    var my_pack ={};
+var my_pack ={};
 function updatePack(){
     my_pack ={};
     var monthname=document.getElementById("month").value;

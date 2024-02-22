@@ -35,6 +35,25 @@ function selectPack(){
 
 }
 </script>
+<form>
+    <label>Enter travel month</label>
+    <input type="text" id = "month" value="May"><br>
+    <label>Enter price</label>
+    <input type="text" id="tripprice" value="3"> <br>
+    <button type="button" onclick="updatePack()"> Update the pack </button>
+</form>
+<p id="result for packing"></p>
 
+<script>
+    var my_pack ={};
+function updatePack(){
+    my_pack ={};
+    var monthname=document.getElementById("month").value;
+    var tripprice = document.getElementById("tripprice").value;
+    my_pack["Monthname"] = monthname;
+    my_pack["Tripprice"] = tripprice;
+    document.getElementById("result for packing").innerHTML = "Updated Pack: " + JSON.stringify(my_pack);
+}
+</script>
 </body>
 </html> 

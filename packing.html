@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Packing page</title>
+ </head>
+<body>
+
+<h1>Sushmitha Vadhireddy packs for a trip</h1>
+
+<form>
+    <label for="first">Pack light</label>
+    <input type ="checkbox" id="first"  value="True"> <br>
+
+    <label for="second">Carry on</label>
+    <input type="checkbox" id="second" value="True"><br>
+    <label for="third">Tablet</label>
+    <input type="checkbox" id="third" value="False"><br>
+
+    <button type="button" onclick="selectPack()">Select for packing</button>
+</form>
+
+
+<p id="result"></p>
+<script> 
+var my_pack = {};
+function selectPack(){
+    my_pack = {};
+    var checkbox1 = document.getElementById("first").checked;
+    var checkbox2 = document.getElementById("second").checked;
+    var checkbox3 = document.getElementById("third").checked;
+    my_pack.mycheckbox1=checkbox1;
+    my_pack.mycheckbox2=checkbox2;
+    my_pack.mycheckbox3=checkbox3;
+    document.getElementById("result").innerHTML= "Result : " + JSON.stringify(my_pack);
+
+}
+</script>
+
+</body>
+</html> 
